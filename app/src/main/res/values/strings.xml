@@ -295,4 +295,8 @@
     <string name="analogscroll_none">None (both sticks move the mouse)</string>
     <string name="analogscroll_right">Right analog stick</string>
     <string name="analogscroll_left">Left analog stick</string>
+
+    <string name="keyboard_service_label">Moonlight物理键盘</string>
+    <string name="accessibility_description_text">此功能仅用于外接实体键盘时，某些系统存在特定的键盘快捷键，此情况会影响串流过程中，无法将相关按键指令传输给目标PC。 \n\nMoonlight不会观察您输入的文本，也不会收集您的密码、信用卡号或任何其他信息。</string>
+
 </resources>

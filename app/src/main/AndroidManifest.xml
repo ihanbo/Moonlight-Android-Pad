@@ -180,6 +180,20 @@
             <meta-data android:name="WindowManagerPreference:FreeformWindowSize" android:value="system-default" />
             <meta-data android:name="WindowManagerPreference:FreeformWindowOrientation" android:value="landscape" />
         </activity>
+        <service
+            android:name="com.limelight.KeyboardAccessibilityService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="@string/keyboard_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/keyboard_accessibility_service" />
+        </service>
+
     </application>
 
 </manifest>
