@@ -39,11 +39,16 @@ public class KeyboardAccessibilityService extends AccessibilityService {
         int action = keyEvent.getAction();
         int keyCode = keyEvent.getKeyCode();
         if (action == KeyEvent.ACTION_DOWN) {
-            LimeLog.info("KeyboardAccessibilityService press keyevent-->" + keyEvent);
+            Log.i("hh","KeyboardAccessibilityService press keyevent-->" + keyEvent);
         }
 
         Game game = Game.instance;
         if (game != null && game.connected && !BLACKLIST_KEYS.contains(Integer.valueOf(keyCode))) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                keyEvent = new KeyEvent(keyEvent.getDownTime(), keyEvent.getEventTime(), keyEvent.getAction(),
+                        KeyEvent.KEYCODE_ESCAPE, keyEvent.getRepeatCount(), keyEvent.getMetaState(), keyEvent.getDeviceId(),
+                        keyEvent.getScanCode(), keyEvent.getFlags(), keyEvent.getSource());
+            }
             if (action == KeyEvent.ACTION_DOWN) {
                 Game.instance.handleKeyDown(keyEvent);
                 return true;
