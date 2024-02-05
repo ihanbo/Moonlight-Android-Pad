@@ -1,5 +1,9 @@
 # Moonlight Android
 
+1. fork自原版
+2. 解决了安卓设备上按键透传问题，各种快捷键不会被安卓系统打断。参考了B站Up阿西西的方式，通过无障碍服务实现，需要在无障碍中开启。只有串流开始以后才会拦截按键处理。
+3. 解决了小米平板等键盘esc会被处理成后退键。导致串流esc键无效问题。
+
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/232a8tadrrn8jv0k/branch/master?svg=true)](https://ci.appveyor.com/project/cgutman/moonlight-android/branch/master)
 [![Translation Status](https://hosted.weblate.org/widgets/moonlight/-/moonlight-android/svg-badge.svg)](https://hosted.weblate.org/projects/moonlight/moonlight-android/)
 
@@ -17,6 +21,14 @@ You can follow development on our [Discord server](https://moonlight-stream.org/
 * [Amazon App Store](https://www.amazon.com/gp/product/B00JK4MFN2)
 * [F-Droid](https://f-droid.org/packages/com.limelight)
 * [APK](https://github.com/moonlight-stream/moonlight-android/releases)
+
+
+## 构建
+1. 配置好Android Studio和ndk位置（在local.properties里配置ndk.dir=xxx）
+2. 在项目根目录执行’git submodule update --init --recursive‘命令
+3. 执行构建apk命令。
+4. 需要jdk17，单独设置的话可以在根目录gradle.properties里单独配置jdk路径:org.gradle.java.home=xxx
+
 
 ## Building
 * Install Android Studio and the Android NDK
